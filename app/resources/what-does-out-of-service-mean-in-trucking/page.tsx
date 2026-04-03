@@ -11,7 +11,8 @@ export default function Page() {
     <ContentPage
       title="What Does Out-of-Service Mean in Trucking?"
       intro="Out-of-service means a driver, vehicle, or operating condition was serious enough that operation could not continue until the issue was corrected. In carrier risk review, out-of-service history often signals more serious breakdowns than routine administrative findings."
-      cta={{ href: '/sample-report', label: 'View Sample Report' }}
+      cta={{ href: '/sample-report', label: 'See a live demo' }}
+      relatedAIQuestions={['How serious is this OOS event for underwriting?', 'What root causes usually drive repeat OOS issues?', 'What controls would prevent this from recurring?']}
     >
       <h2>Why it matters</h2>
       <p>

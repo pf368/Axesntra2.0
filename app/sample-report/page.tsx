@@ -15,6 +15,7 @@ import { AiGuidedPromptPanel } from '@/components/ai-guided-prompt-panel';
 import { AiComplianceProgramCards } from '@/components/ai-compliance-program-card';
 import { AiFixPlanDrawer } from '@/components/ai-fix-plan-drawer';
 import { ViolationScenarioCard } from '@/components/violation-scenario-card';
+import { ReportAIPanel } from '@/components/sample-report/report-ai-panel';
 import { CarrierBrief, CarrierListItem } from '@/lib/types';
 import {
   getAiSafetyInsight,
@@ -251,6 +252,7 @@ export default function SampleReportPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <ReportAIPanel />
       <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-10 text-white">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -837,6 +839,7 @@ export default function SampleReportPage() {
             </Button>
           </div>
         </div>
+        <ReportAIPanel inline />
       </div>
     </div>
   );
