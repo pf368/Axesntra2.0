@@ -6,8 +6,7 @@ import { Shield, Menu, X, Bell, LogIn, LogOut, User, LucideIcon } from 'lucide-r
 import { useAuth } from '@/context/AuthContext';
 
 const NAV_LINKS: { href: string; label: string; icon?: LucideIcon }[] = [
-  { href: '/sample-report', label: 'Sample Report' },
-  { href: '/methodology', label: 'Methodology' },
+  { href: '/methodology', label: 'How it works' },
   { href: '/resources', label: 'Resources' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/watchlist', label: 'Watchlist', icon: Bell },
@@ -40,6 +39,13 @@ export function Navbar() {
               </Link>
             ))}
 
+            <Link
+              href="/#search"
+              className="text-sm px-3.5 py-2 border border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors font-medium"
+            >
+              Try it free
+            </Link>
+
             {isConfigured ? (
               user ? (
                 <div className="flex items-center gap-3">
@@ -71,7 +77,7 @@ export function Navbar() {
                 href="/early-access"
                 className="text-sm bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors font-medium"
               >
-                Early Access
+                Get access
               </Link>
             )}
           </div>
@@ -97,6 +103,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/#search"
+              onClick={() => setMobileOpen(false)}
+              className="block text-sm border border-slate-300 text-slate-700 px-4 py-2 rounded-lg hover:border-slate-400 transition-colors font-medium text-center"
+            >
+              Try it free
+            </Link>
             {isConfigured && !user && (
               <Link
                 href="/login"
@@ -113,7 +126,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="block text-sm bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors font-medium text-center"
               >
-                Early Access
+                Get access
               </Link>
             )}
           </div>

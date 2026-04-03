@@ -31,6 +31,7 @@ interface ContentPageProps {
   category?: string;
   readingTime?: string;
   currentHref?: string;
+  relatedAIQuestions?: string[];
 }
 
 function InlineSearchCta() {
@@ -77,7 +78,7 @@ function InlineSearchCta() {
       <p className="mt-3 text-xs text-slate-500">
         Or{' '}
         <Link href="/sample-report" className="text-sky-600 underline underline-offset-2 hover:text-sky-500">
-          view a sample report
+          see a live demo
         </Link>{' '}
         to see the full risk profile.
       </p>
@@ -93,6 +94,7 @@ export function ContentPage({
   category = 'Guide',
   readingTime = '4 min read',
   currentHref,
+  relatedAIQuestions,
 }: ContentPageProps) {
   const related = ALL_RESOURCES.filter((r) => r.href !== currentHref).slice(0, 3);
 
@@ -172,6 +174,26 @@ export function ContentPage({
         <InlineSearchCta />
       </div>
 
+
+      {relatedAIQuestions && relatedAIQuestions.length > 0 && (
+        <div className="container mx-auto max-w-3xl px-6 pb-12">
+          <div className="border-t border-slate-200 pt-8">
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">Ask the AI about this topic</p>
+            <p className="text-slate-600 mb-4">These are the kinds of questions Axesntra's AI Safety Advisor can answer in seconds.</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {relatedAIQuestions.map((question) => (
+                <div key={question} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-700">
+                  {question}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-sky-600">
+              Get answers for your actual carriers → <Link href="/early-access" className="underline">Try Axesntra free</Link>
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ── CTA panel ───────────────────────────────────────── */}
       {cta && (
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 py-20 px-6">
@@ -236,7 +258,7 @@ export function ContentPage({
                 href="/sample-report"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
               >
-                View sample report
+                See a live demo
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>

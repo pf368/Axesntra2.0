@@ -89,7 +89,7 @@ export function SourceUnavailableState({
           )}
           {onViewSample && (
             <Button onClick={onViewSample}>
-              View Sample Report
+              See a live demo
             </Button>
           )}
         </div>
@@ -126,7 +126,7 @@ export function ParseFailedState({
           )}
           {onViewSample && (
             <Button onClick={onViewSample}>
-              View Sample Report
+              See a live demo
             </Button>
           )}
         </div>

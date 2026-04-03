@@ -11,7 +11,7 @@ export default function Page() {
     <ContentPage
       title="How Do You Check If a Carrier Is Safe?"
       intro="Check whether a carrier is safe by reviewing inspection history, crash exposure, out-of-service events, operating status, and trend direction together. The objective is to identify both current risk and any meaningful sign of deterioration."
-      cta={{ href: '/sample-report', label: 'View Sample Report' }}
+      cta={{ href: '/sample-report', label: 'See a live demo' }}
     >
       <h2>Fast answer</h2>
       <p>
